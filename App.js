@@ -25,7 +25,7 @@ const App: () => React$Node = () => {
     <ImageBackground source={IMAGE_SOURCE} style={styles.container} >
       <TouchableWithoutFeedback style={styles.container}>
         <View>
-          <TouchableOpacity style={styles.buttonStyle} onPress={() => onPress(item)}>
+          <TouchableOpacity style={styles.buttonStyle} onPress={() => {}}>
             <Text style={styles.buttonText}>SHOP NOW</Text>
           </TouchableOpacity>
         </View>
