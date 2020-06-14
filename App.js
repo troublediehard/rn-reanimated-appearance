@@ -6,25 +6,23 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   StyleSheet,
   View,
   Text,
-  Dimensions,
-  TouchableWithoutFeedback,
   ImageBackground,
-  TouchableOpacity
+  TouchableOpacity,
+  TouchableWithoutFeedback
 } from 'react-native';
 
 const IMAGE_SOURCE = require('./assets/background.jpg')
-const { width, height } = Dimensions.get('window');
 
 const App: () => React$Node = () => {
   return (
     <ImageBackground source={IMAGE_SOURCE} style={styles.container} >
-      <TouchableWithoutFeedback style={styles.container}>
-        <View>
+      <TouchableWithoutFeedback>
+        <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.buttonStyle} onPress={() => {}}>
             <Text style={styles.buttonText}>SHOP NOW</Text>
           </TouchableOpacity>
@@ -35,7 +33,9 @@ const App: () => React$Node = () => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  container: { flex: 1 },
+  touchable: { flex: 1 },
+  buttonContainer: { flex: 1, alignItems: 'center', justifyContent: 'center' },
   buttonStyle: {
     paddingHorizontal: 20,
     paddingVertical: 10,
@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: '700',
   },
-
 });
 
 export default App;
